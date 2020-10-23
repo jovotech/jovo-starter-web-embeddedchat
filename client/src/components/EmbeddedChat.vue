@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-col border rounded-xl relative max-h-full h-full">
     <embedded-chat-body class="flex-grow rounded-t-xl" />
-    <embedded-chat-footer class="rounded-b-xl border-t" />
+    <embedded-chat-footer class="mt-auto rounded-b-xl border-t" />
   </div>
 </template>
 

@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex flex-col overflow-y-hidden"
+    class="flex flex-col overflow-y-hidden h-full"
     @mouseenter="isHovered = true"
     @mouseleave="isHovered = false"
   >
