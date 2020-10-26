@@ -15,8 +15,6 @@ module.exports = {
         '2': '2rem',
       },
       backgroundColor: {
-        chat: '#ECECEC',
-        quickReply: 'rgba(196, 196, 196, 0.3)',
         primary: '#434A65',
       },
       maxWidth: {

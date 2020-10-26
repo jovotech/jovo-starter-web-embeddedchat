@@ -24,7 +24,7 @@ app.use(webPlatform, new FileDb());
 
 app.setHandler({
 
-  Unhandled() {
+  LAUNCH() {
     this.ask(
       `The content of this conversation is fully customizable. ` +
       `<a href="https://www.jovo.tech/docs/routing" target="_blank">Our docs</a> show you how to update the app logic. ` +
@@ -34,6 +34,10 @@ app.setHandler({
       'Yes',
       'No'
     ]);
+  },
+
+  Unhandled() {
+    return this.toIntent('LAUNCH');
   },
 
   TakeMeToTheDocs: {

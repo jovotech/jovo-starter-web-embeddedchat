@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col bg-chat min-h-chat">
+  <div class="flex flex-col min-h-chat">
     <embedded-chat-conversation />
   </div>
 </template>

@@ -1,13 +1,13 @@
 <template>
   <div
-    class="max-w-half p-2 inline shadow-lg"
+    class="max-w-half py-2 px-4 inline text-md"
     :class="[
       isRequest
-        ? 'bg-primary self-end text-right text-white rounded-t-xl rounded-bl-xl'
-        : 'bg-white rounded-b-xl rounded-tr-xl',
+        ? 'bg-primary self-end text-right text-white rounded-t-full rounded-bl-full'
+        : 'bg-white self-start text-gray-800 rounded-b-full rounded-tr-full',
     ]"
   >
-    <p class="whitespace-pre-wrap" v-text="part.value"></p>
+    <p class="whitespace-pre-wrap p-3" v-html="part.value"></p>
   </div>
 </template>
 

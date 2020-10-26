@@ -1,19 +1,18 @@
 <template>
-  <div class="flex flex-col border rounded-xl relative max-h-full h-full">
-    <embedded-chat-body class="flex-grow rounded-t-xl" />
-    <embedded-chat-footer class="mt-auto rounded-b-xl border-t" />
+  <div class="flex flex-col border relative max-h-full h-full">
+    <embedded-chat-body class="flex-grow" />
+    <embedded-chat-input class="mt-auto rounded-full" />
   </div>
 </template>
 
 <script lang="ts">
 import EmbeddedChatBody from '@/components/EmbeddedChatBody.vue';
-import EmbeddedChatFooter from '@/components/EmbeddedChatFooter.vue';
-import PlayIcon from 'vue-feather-icons/icons/PlayIcon';
+import EmbeddedChatInput from '@/components/EmbeddedChatInput.vue';
 import { Component, Vue } from 'vue-property-decorator';
 
 @Component({
   name: 'embedded-chat',
-  components: { EmbeddedChatFooter, EmbeddedChatBody, PlayIcon },
+  components: { EmbeddedChatInput, EmbeddedChatBody },
 })
 export default class EmbeddedChat extends Vue {}
 </script>

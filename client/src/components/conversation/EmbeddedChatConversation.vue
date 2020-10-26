@@ -6,7 +6,7 @@
   >
     <div
       ref="partContainer"
-      class="flex-grow flex flex-col space-y-4 space-x-1 overflow-y-scroll px-6 py-4"
+      class="flex-grow flex flex-col overflow-y-scroll py-4"
       :class="[isHovered ? 'scrollbar' : 'scrollbar-invisible']"
     >
       <embedded-chat-conversation-part
@@ -15,18 +15,17 @@
         :part="part"
       />
     </div>
-    <div class="flex-shrink-0">
+    <div class="flex-shrink-0 self-center">
       <div
         ref="quickReplyContainer"
-        class="flex items-center space-x-2 overflow-x-auto"
+        class="flex space-x-2 overflow-x-auto"
         :class="[isHovered ? 'scrollbar' : 'scrollbar-invisible']"
         @wheel.prevent="handleQuickReplyScroll"
       >
         <div
           v-for="(quickReply, index) in conversation.quickReplies"
           :key="index"
-          class="flex py-2"
-          :class="[index === 0 ? 'ml-auto' : '']"
+          class="flex py-3"
         >
           <embedded-chat-conversation-quick-reply
             :quick-reply="quickReply"

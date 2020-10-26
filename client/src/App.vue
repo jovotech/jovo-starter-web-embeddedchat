@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class="w-screen h-screen p-16">
+  <div id="app" class="w-screen h-screen p-20 bg-gray-300">
     <embedded-chat />
   </div>
 </template>
