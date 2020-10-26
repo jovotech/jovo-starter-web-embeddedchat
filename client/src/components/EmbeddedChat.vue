@@ -8,11 +8,16 @@
 <script lang="ts">
 import EmbeddedChatBody from '@/components/EmbeddedChatBody.vue';
 import EmbeddedChatInput from '@/components/EmbeddedChatInput.vue';
+import RequestType from 'jovo-client-web-vue';
 import { Component, Vue } from 'vue-property-decorator';
 
 @Component({
   name: 'embedded-chat',
   components: { EmbeddedChatInput, EmbeddedChatBody },
 })
-export default class EmbeddedChat extends Vue {}
+export default class EmbeddedChat extends Vue {
+  async mounted() {
+    await this.$client.createRequest({ type: RequestType.Launch }).send();
+  }
+}
 </script>
