@@ -1,14 +1,14 @@
 <template>
-  <div class="flex flex-col border relative max-h-full h-full">
-    <embedded-chat-body class="flex-grow" />
-    <embedded-chat-input class="mt-auto rounded-full" />
+  <div class="flex flex-col border relative overflow-y-hidden">
+    <embedded-chat-body class="flex-1" />
+    <embedded-chat-input class="flex-shrink-0 mt-auto rounded-full" />
   </div>
 </template>
 
 <script lang="ts">
 import EmbeddedChatBody from '@/components/EmbeddedChatBody.vue';
 import EmbeddedChatInput from '@/components/EmbeddedChatInput.vue';
-import {RequestType, ClientEvent, ActionType, Action} from 'jovo-client-web-vue';
+import { RequestType, ClientEvent, ActionType, Action } from 'jovo-client-web-vue';
 import { Component, Vue } from 'vue-property-decorator';
 
 @Component({
@@ -17,7 +17,7 @@ import { Component, Vue } from 'vue-property-decorator';
 })
 export default class EmbeddedChat extends Vue {
   async mounted() {
-    await this.$client.initialize(); 
+    await this.$client.initialize();
     await this.$client.createRequest({ type: RequestType.Launch }).send();
     this.$client.on(ClientEvent.Action, this.onAction);
   }
@@ -26,9 +26,9 @@ export default class EmbeddedChat extends Vue {
     if (action.type === ActionType.Custom) {
       switch (action.command) {
         case 'redirect': {
-          setTimeout(()=>{
+          setTimeout(() => {
             window.open(action.value);
-          },800);
+          }, 800);
           break;
         }
         default:
