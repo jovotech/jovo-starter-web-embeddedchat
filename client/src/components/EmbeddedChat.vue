@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col border relative overflow-y-hidden">
+  <div class="flex flex-col border relative h-full overflow-y-hidden">
     <embedded-chat-body class="flex-1" />
     <embedded-chat-input class="flex-shrink-0 mt-auto rounded-full" />
   </div>

@@ -18,11 +18,17 @@ module.exports = {
         primary: '#434A65',
       },
       maxWidth: {
-        half: '50%',
+        '1/4': '25%',
+        '1/2': '50%',
+        '3/4': '75%',
+        'full': '100%',
       },
-      minHeight: {
-        chat: '5rem'
-      }
+      maxHeight: {
+        '1/4': '25%',
+        '1/2': '50%',
+        '3/4': '75%',
+        'full': '100%',
+      },
     },
   },
   variants: {},

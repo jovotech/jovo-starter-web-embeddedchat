@@ -4,7 +4,7 @@
       ref="input"
       v-model="inputValue"
       class="flex-grow focus:outline-none text-md"
-      placeholder="Type something and press Enter..."
+      placeholder="Type something..."
       @keypress.enter.exact="sendText"
       autofocus
     />

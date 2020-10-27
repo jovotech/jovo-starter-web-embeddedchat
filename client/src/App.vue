@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class="w-screen h-screen p-24 bg-gray-300">
+  <div id="app" class="w-screen h-screen p-8 sm-24 lg:p-32 bg-gray-300">
     <div class="w-full h-full flex flex-col">
       <div id="intro" class="text-center text-gray-800 mb-10">
       <h1 class="text-xl mb-5">Embedded Chat</h1>
