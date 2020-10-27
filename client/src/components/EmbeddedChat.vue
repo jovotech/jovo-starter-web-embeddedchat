@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-col border relative h-full overflow-y-hidden">
-    <embedded-chat-body class="flex-1" />
-    <embedded-chat-bottom class="flex-shrink-0 mt-auto rounded-full" />
+    <embedded-chat-body class="flex-1 overflow-y-scroll" />
+    <embedded-chat-bottom class="flex-shrink-0 mt-auto" />
   </div>
 </template>
 
