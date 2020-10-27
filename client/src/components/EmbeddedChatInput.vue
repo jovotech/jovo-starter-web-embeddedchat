@@ -18,7 +18,7 @@
 </template>
 
 <script lang="ts">
-import { RequestType } from 'jovo-client-web-vue';
+import { RequestType, WebRequest, ClientEvent } from 'jovo-client-web-vue';
 import { Component, Vue } from 'vue-property-decorator';
 import SendIcon from 'vue-feather-icons/icons/SendIcon';
 
@@ -31,12 +31,23 @@ import SendIcon from 'vue-feather-icons/icons/SendIcon';
 export default class EmbeddedChatInput extends Vue {
   inputValue = '';
 
+  mounted() {
+    this.$client.on(ClientEvent.Request, this.onRequest);
+  }
+
+  beforeDestroy() {
+    this.$client.off(ClientEvent.Request, this.onRequest);
+  }
+
   async sendText() {
     if (!this.inputValue) return;
     const text = this.inputValue;
     this.inputValue = '';
-    (this.$refs.input as HTMLElement).focus();
     return this.$client.createRequest({ type: RequestType.Text, body: { text } }).send();
+  }
+  
+  private onRequest(req: WebRequest) {
+    (this.$refs.input as HTMLElement).focus();
   }
 }
 </script>
