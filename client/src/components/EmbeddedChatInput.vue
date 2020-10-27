@@ -1,6 +1,7 @@
 <template>
   <div class="px-8 py-6 bg-white flex items-center">
     <input
+      ref="input"
       v-model="inputValue"
       class="flex-grow focus:outline-none text-md"
       placeholder="Type something and press Enter..."
@@ -34,6 +35,7 @@ export default class EmbeddedChatInput extends Vue {
     if (!this.inputValue) return;
     const text = this.inputValue;
     this.inputValue = '';
+    this.$refs.input.focus();
     return this.$client.createRequest({ type: RequestType.Text, body: { text } }).send();
   }
 }
