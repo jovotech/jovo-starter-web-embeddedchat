@@ -1,7 +1,7 @@
 <template>
-  <div id="app" class="w-screen h-screen p-32 bg-gray-300">
-    <div class="w-full h-full">
-      <div id="intro" class="text-center text-gray-800">
+  <div id="app" class="w-screen h-screen p-24 bg-gray-300">
+    <div class="w-full h-full flex flex-col">
+      <div id="intro" class="text-center text-gray-800 mb-10">
       <h1 class="text-xl mb-5">Embedded Chat</h1>
       <p>This <a class="underline" href="https://github.com/jovotech/jovo-starter-web-embeddedchat" target="_blank">open source</a> chat is fully customizable and can be embedded into any web app.</p>
     </div>
