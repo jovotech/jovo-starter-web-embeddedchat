@@ -1,19 +1,19 @@
 <template>
   <div class="flex flex-col border relative h-full overflow-y-hidden">
     <embedded-chat-body class="flex-1" />
-    <embedded-chat-input class="flex-shrink-0 mt-auto rounded-full" />
+    <embedded-chat-bottom class="flex-shrink-0 mt-auto rounded-full" />
   </div>
 </template>
 
 <script lang="ts">
 import EmbeddedChatBody from '@/components/EmbeddedChatBody.vue';
-import EmbeddedChatInput from '@/components/EmbeddedChatInput.vue';
+import EmbeddedChatBottom from '@/components/EmbeddedChatBottom.vue';
 import { RequestType, ClientEvent, ActionType, Action } from 'jovo-client-web-vue';
 import { Component, Vue } from 'vue-property-decorator';
 
 @Component({
   name: 'embedded-chat',
-  components: { EmbeddedChatInput, EmbeddedChatBody },
+  components: { EmbeddedChatBody, EmbeddedChatBottom },
 })
 export default class EmbeddedChat extends Vue {
   async mounted() {

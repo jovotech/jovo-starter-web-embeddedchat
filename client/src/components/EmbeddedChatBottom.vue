@@ -23,12 +23,12 @@ import { Component, Vue } from 'vue-property-decorator';
 import SendIcon from 'vue-feather-icons/icons/SendIcon';
 
 @Component({
-  name: 'embedded-chat-input',
+  name: 'embedded-chat-bottom',
   components: {
     SendIcon,
   },
 })
-export default class EmbeddedChatInput extends Vue {
+export default class EmbeddedChatBottom extends Vue {
   inputValue = '';
 
   mounted() {
