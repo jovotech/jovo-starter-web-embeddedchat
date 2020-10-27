@@ -35,7 +35,7 @@ export default class EmbeddedChatInput extends Vue {
     if (!this.inputValue) return;
     const text = this.inputValue;
     this.inputValue = '';
-    this.$refs.input.focus();
+    (this.$refs.input as HTMLElement).focus();
     return this.$client.createRequest({ type: RequestType.Text, body: { text } }).send();
   }
 }
