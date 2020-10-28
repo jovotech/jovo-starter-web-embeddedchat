@@ -1,36 +1,52 @@
-# jovo-starter-web-embeddedchat
+# Jovo Web Starter: Embedded Chat
 
-## Installation
+Fully customizable open source embedded chat widget for Jovo chatbots.
 
-1. Install the dependencies in both packages:
+This repository contains:
+* `app`: Backend logic built with the [Jovo Framework](https://github.com/jovotech/jovo-framework) using its [Web Platform integration](https://github.com/jovotech/jovo-framework/tree/master/jovo-platforms/jovo-platform-web).
+* `client`: Frontend built with [Vue.js](https://vuejs.org/) and [Tailwind CSS](https://tailwindcss.com/), communicating with the backend using the [Jovo Web Client for Vue.js](https://github.com/jovotech/jovo-framework/tree/master/jovo-clients/jovo-client-web-vue).
 
-   Run `npm i` or `npm install` in `app` and `client`.
+![Jovo Web Client to App](img/jovo-web-client-to-app.png)
 
-2. Prepare the Client:
+> Note: For demo purposes and the ease of getting started quickly, the template uses the [Web Speech API](https://wicg.github.io/speech-api/) as an ASR, which only works on Google Chrome. To use the Web integration on other browsers, you can integrate one of our integrations of several [cloud ASRs](https://www.jovo.tech/marketplace/tag/asr).
 
-   Set the `url` in `client/src/main.ts` to the url of your endpoint.
+## Getting started
 
-3. Prepare the App:
+1. Run `npm install`. This will install the dependencies in both `app` and `client`
 
-   The [WebPlatform](https://www.jovo.tech/marketplace/jovo-platform-web) itself does not have any ASR-, or NLU-capabilities, instead other integrations take care of these tasks.\
-   For this starter, [LexSlu](https://www.jovo.tech/marketplace/jovo-slu-lex) was chosen because it handles both ASR and NLU.
-   You can choose any other integration(s) to handle ASR and NLU.\
-   Visit the [Jovo Marketplace](https://www.jovo.tech/marketplace) for more information.
+2. Go into the `client` directory and run `npm run serve` to start the frontend
 
-   > If you decide to use LexSlu, you will have to provide a name and an alias of the Lex-bot, as well as Amazon-credentials.
+3. Go into the `app` directory and run `jovo run` to start the backend
 
-## Usage
+4. Open the starter in your browser `localhost:8080`
 
-1. Start the Jovo-App in `app`:
+## Customization
 
-   ```
-   npm run start:dev
-   ```
+> For a more detailed explanation and walk-through check out our in-depth [tutorial](TODO: link to tutorial)
 
-2. Start the Web-App in `client`:
+The starter was built for you to have a working example as well as an entry point to get started with the Jovo Web integration immediately. Because of that, we've tried to keep the starters as small as possible. The following documentation will help you understand how the starter is structured and which components take care of which tasks.
 
-   ```
-   npm run serve
-   ```
+### Client
 
-The Web-App is now running at http://localhost:8080 and ready to be used.
+The client is a Vue.js project that consists of a single component "EmbeddedChat" which is styled in Tailwind CSS.
+
+#### Component: EmbeddedChat
+
+The EmbeddedChat component implements a fully functioning chat body where the user can type in their request and receive a response from the Jovo app. handles the registration for multiple event listeners, namely `ClientEvent.Request`, `ClientEvent.Response`, and `ClientEvent.Action`.
+
+TODO: add links to docs and more info
+* `ClientEvent.Request`: triggered before the request is sent out to the Jovo app. In this case, it is used to display the user's input in the chat body.
+* `ClientEvent.Response`: triggered when the client receives the Jovo app's response. In this case, it is used to display the app's response in the chat body.
+* `ClientEvent.Action`: triggered when the app's response contains an action. In our case, we expect quick replies that are displayed as buttons on top of text input. It also listens for a custom action that opens a link to a new tab.
+
+### App
+
+The Jovo app the new [Jovo Web Platform integration](TODO: link) as well as [NLP.js](https://www.jovo.tech/marketplace/jovo-nlu-nlpjs) as its NLU. It implements a simple interaction where the user can be redirected to the Jovo Framework's documentation.
+
+#### Language Model
+
+The language model consists of two simple intents, `HelloWorldIntent` and `YesIntent`, used to implement the sample interaction.
+
+#### app.ts
+
+The `app.ts` file contains the initialization of the app and its plugins as well as the basic logic for the sample interaction. It makes use of the Web integrations [`Custom Actions`](TODO: link to docs) to send a `redirect` action used to open a link in a new tab.
