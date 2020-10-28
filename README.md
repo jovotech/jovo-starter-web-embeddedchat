@@ -6,7 +6,9 @@ Built with the [Jovo Framework](https://github.com/jovotech/jovo-framework), [Vu
 
 ![Jovo Embedded Chat](./img/starter-web-embeddedchat.gif)
 
-> Find the demo here: https://www.jovo.tech/demos/starter-web-embeddedchat/
+Find the demo here: https://www.jovo.tech/demos/starter-web-embeddedchat/.
+
+> Support Jovo by starring [our main repo](https://github.com/jovotech/jovo-framework) or joining [our Open Collective](https://opencollective.com/jovo-framework).
 
 - [Getting Started](#getting-started)
 - [How it works](#how-it-works)
