@@ -4,9 +4,9 @@ Fully customizable open source chat interface that can be added to any web app.
 
 Built with the [Jovo Framework](https://github.com/jovotech/jovo-framework), [Vue.js](https://github.com/vuejs/vue), and [Tailwind CSS](https://github.com/tailwindlabs/tailwindcss).
 
-![Jovo Embedded Chat](./img/starter-web-embeddedchat.gif)
+Demo: [jovo.tech/demos/starter-web-embeddedchat](https://www.jovo.tech/demos/starter-web-embeddedchat/).
 
-Find the demo here: https://www.jovo.tech/demos/starter-web-embeddedchat/.
+![Jovo Embedded Chat](./img/starter-web-embeddedchat.gif)
 
 > Support Jovo by starring [our main repo](https://github.com/jovotech/jovo-framework) or joining [our Open Collective](https://opencollective.com/jovo-framework).
 
