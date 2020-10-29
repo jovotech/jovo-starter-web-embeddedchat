@@ -1,5 +1,5 @@
 <template>
-  <div class="px-8 py-6 bg-white flex items-center rounded-full">
+  <div class="px-4 sm:px-8 py-3 sm:py-6 bg-white flex items-center rounded-full">
     <input
       ref="input"
       v-model="inputValue"
@@ -8,17 +8,12 @@
       @keypress.enter.exact="sendText"
       autofocus
     />
-    <send-icon
-      class="cursor-pointer"
-      size="20"
-      stroke-width="1"
-      @click="sendText"
-    />
+    <send-icon class="cursor-pointer" size="20" stroke-width="1" @click="sendText" />
   </div>
 </template>
 
 <script lang="ts">
-import { RequestType, WebRequest, ClientEvent } from 'jovo-client-web-vue';
+import { RequestType, ClientEvent } from 'jovo-client-web-vue';
 import { Component, Vue } from 'vue-property-decorator';
 import SendIcon from 'vue-feather-icons/icons/SendIcon';
 
@@ -45,8 +40,8 @@ export default class EmbeddedChatBottom extends Vue {
     this.inputValue = '';
     return this.$client.createRequest({ type: RequestType.Text, body: { text } }).send();
   }
-  
-  private onRequest(req: WebRequest) {
+
+  private onRequest() {
     (this.$refs.input as HTMLElement).focus();
   }
 }

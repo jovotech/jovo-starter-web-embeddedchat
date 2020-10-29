@@ -25,7 +25,7 @@
         <div
           v-for="(quickReply, index) in conversation.quickReplies"
           :key="index"
-          class="flex py-3"
+          class="flex py-2 sm:py-3"
         >
           <embedded-chat-conversation-quick-reply
             :quick-reply="quickReply"
@@ -102,20 +102,20 @@ export default class EmbeddedChatConversation extends Vue {
         this.conversation.parts.push({
           type: 'request',
           subType: 'text',
-          value: req.request.body.text!,
+          value: req.request.body.text!, // eslint-disable-line
         });
         break;
       case RequestType.Audio:
         this.conversation.parts.push({
           type: 'request',
           subType: 'audio',
-          value: req.request.body.audio!.b64string,
+          value: req.request.body.audio!.b64string,     // eslint-disable-line
         });
         break;
     }
   }
 
-  private onReprompt(actions: Action[]) {
+  private onReprompt() {
     this.includeOutput = false;
   }
 
