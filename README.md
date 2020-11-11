@@ -15,6 +15,7 @@ Demo: [jovo.tech/demos/starter-web-embeddedchat](https://www.jovo.tech/demos/sta
 - [Customization](#customization)
   - [Client](#client)
   - [App](#app)
+- [Deployment](#deployment)
 - [About Jovo](#about-jovo)
 
 ## Getting Started
@@ -32,17 +33,19 @@ Demo: [jovo.tech/demos/starter-web-embeddedchat](https://www.jovo.tech/demos/sta
 
     $ cd my-embeddedchat
     ```
+
     Alternatively, you can clone this repository and run `npm install`.
 
+2.  **Start client (Vue.js)**
 
-2. **Start client (Vue.js)**
-   ```sh
-    $ cd client
+    ```sh
+     $ cd client
 
-    # Start Vue frontend
-    $ npm run serve
+     # Start Vue frontend
+     $ npm run serve
     ```
-3. **Start app (Jovo)**
+
+3.  **Start app (Jovo)**
     In a new tab:
 
     ```sh
@@ -51,19 +54,19 @@ Demo: [jovo.tech/demos/starter-web-embeddedchat](https://www.jovo.tech/demos/sta
     # Start Jovo development server
     $ jovo run
     ```
+
     The first time, `jovo run` will compile the TypeScript code. After making changes, make sure to compile with `npm run tsc` and then start the Jovo development server again.
 
-4. **Open the starter in your browser at `http://localhost:8080`.**
-
+4.  **Open the starter in your browser at `http://localhost:8080`.**
 
 ## How it works
 
 ![Jovo Web Client to App](img/jovo-web-client-to-app.png)
 
 This repository contains:
-* `app`: Backend logic built with the [Jovo Framework](https://github.com/jovotech/jovo-framework) using its [Web Platform integration](https://github.com/jovotech/jovo-framework/tree/master/jovo-platforms/jovo-platform-web).
-* `client`: Frontend built with [Vue.js](https://vuejs.org/) and [Tailwind CSS](https://tailwindcss.com/), communicating with the backend using the [Jovo Web Client for Vue.js](https://github.com/jovotech/jovo-framework/tree/master/jovo-clients/jovo-client-web-vue).
 
+- `app`: Backend logic built with the [Jovo Framework](https://github.com/jovotech/jovo-framework) using its [Web Platform integration](https://github.com/jovotech/jovo-framework/tree/master/jovo-platforms/jovo-platform-web).
+- `client`: Frontend built with [Vue.js](https://vuejs.org/) and [Tailwind CSS](https://tailwindcss.com/), communicating with the backend using the [Jovo Web Client for Vue.js](https://github.com/jovotech/jovo-framework/tree/master/jovo-clients/jovo-client-web-vue).
 
 ## Customization
 
@@ -75,13 +78,15 @@ The following documentation will help you understand how the starter is structur
 
 The client is a Vue.js project that consists of a single component "EmbeddedChat" which is styled in Tailwind CSS.
 
+If you are new to Vue.js and want to develop your website starting with this project, you can take a look at the Vue.js guide [here](https://vuejs.org/v2/guide/). This will give you a quick start to how Vue.js works, so you can start creating right away.
+
 #### Component: EmbeddedChat
 
 The EmbeddedChat component implements a fully functioning chat body where the user can type in their request and receive a response from the Jovo app. It handles the registration for multiple event listeners, namely `ClientEvent.Request`, `ClientEvent.Response`, and `ClientEvent.Action`.
 
-* `ClientEvent.Request`: triggered before the request is sent out to the Jovo app. In this case, it is used to display the user's input in the chat body.
-* `ClientEvent.Response`: triggered when the client receives the Jovo app's response. In this case, it is used to display the app's response in the chat body.
-* `ClientEvent.Action`: triggered when the app's response contains an action. In our case, we expect quick replies that are displayed as buttons on top of text input. It also listens for a custom action that opens a link to a new tab.
+- `ClientEvent.Request`: triggered before the request is sent out to the Jovo app. In this case, it is used to display the user's input in the chat body.
+- `ClientEvent.Response`: triggered when the client receives the Jovo app's response. In this case, it is used to display the app's response in the chat body.
+- `ClientEvent.Action`: triggered when the app's response contains an action. In our case, we expect quick replies that are displayed as buttons on top of text input. It also listens for a custom action that opens a link to a new tab.
 
 ### App
 
@@ -95,12 +100,29 @@ The language model consists of two intents, `HelloWorldIntent` and `YesIntent`, 
 
 The `app.ts` file contains the initialization of the app and its plugins as well as the basic logic for the sample interaction. It makes use of the Web integrations `Custom Actions` to send a `redirect` action used to open a link in a new tab.
 
+## Deployment
+
+### Client
+
+> Take a look at the Vue deployment docs [here](https://cli.vuejs.org/guide/deployment).
+
+To integrate Jovo Embedded Chat into your existing project, you can use the npm script `build` inside of the `client/` directory. This will produce a bundle in a dedicated `dist/` directory, containing the whole Vue.js client with minified HTML, CSS and JavaScript, ready for dynamic integration into any website.
+
+### App
+
+You can host your Jovo app on almost any platform, whether you choose a hosting provider or to build your own Node.js-based HTTP server. Here are a few examples:
+
+- [AWS Lambda](https://www.jovo.tech/docs/hosting/aws-lambda)
+- [Google Cloud Functions](https://www.jovo.tech/docs/hosting/google-cloud-functions)
+- [Azure Functions](https://www.jovo.tech/docs/hosting/azure-functions)
+- [Using Node.js for your own server](https://www.jovo.tech/docs/hosting/http-host)
+
 ## About Jovo
 
 Jovo is the most popular development framework for voice, including platforms like Alexa, Google Assistant, and the web.
 
--   [Jovo Website](https://jovo.tech/)
--   [Documentation](https://jovo.tech/docs/)
--   [Marketplace](https://www.jovo.tech/marketplace/)
--   [Twitter](https://twitter.com/jovotech/)
--   [Forum](https://community.jovo.tech/)
+- [Jovo Website](https://jovo.tech/)
+- [Documentation](https://jovo.tech/docs/)
+- [Marketplace](https://www.jovo.tech/marketplace/)
+- [Twitter](https://twitter.com/jovotech/)
+- [Forum](https://community.jovo.tech/)
